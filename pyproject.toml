@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ctxwaste"
+version = "0.1.0"
+description = "Audit AI-agent transcripts for dead weight: context rot, duplicated content, oversized tool results, repeated file reads, and the input tokens they re-send every turn. Like ccusage, but for waste — any JSONL transcript, 100% offline, zero dependencies."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "osmanlam" }]
+keywords = [
+  "context rot",
+  "token waste",
+  "agent transcripts",
+  "claude code",
+  "context engineering",
+  "llm",
+  "jsonl",
+  "cli",
+  "tokens",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Software Development :: Quality Assurance",
+  "Topic :: System :: Logging",
+]
+
+[project.urls]
+Homepage = "https://github.com/osmanlam/ctxwaste"
+Issues = "https://github.com/osmanlam/ctxwaste/issues"
+
+[project.scripts]
+ctxwaste = "ctxwaste.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

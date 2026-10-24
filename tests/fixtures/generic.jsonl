@@ -1,0 +1,13 @@
+{"role": "system", "content": "You are a careful coding agent."}
+{"role": "user", "content": "List the files in /srv/data and read a.csv."}
+{"role": "assistant", "content": [{"type": "text", "text": "Checking the directory."}, {"type": "tool_use", "id": "g1", "name": "list_files", "input": {"path": "/srv/data"}}]}
+{"role": "tool", "tool_call_id": "g1", "content": "a.csv\nb.csv\nc.csv"}
+{"role": "user", "content": "Now read /srv/data/a.csv"}
+{"role": "assistant", "content": [{"type": "tool_use", "id": "g2", "name": "read_file", "input": {"file_path": "/srv/data/a.csv"}}]}
+{"role": "tool", "tool_call_id": "g2", "content": "id,name,score\n1,alpha,10\n2,beta,20\n3,gamma,30"}
+{"role": "assistant", "content": "a.csv has 3 rows; alpha leads."}
+{"role": "user", "content": "Read /srv/data/a.csv again please."}
+{"role": "assistant", "content": [{"type": "tool_use", "id": "g3", "name": "read_file", "input": {"file_path": "/srv/data/a.csv"}}]}
+{"role": "tool", "tool_call_id": "g3", "content": "id,name,score\n1,alpha,10\n2,beta,20\n3,gamma,30"}
+{"role": "assistant", "content": [{"type": "text", "text": "Same three rows as before."}]}
+{"role": "user", "content": [{"type": "tool_result", "tool_use_id": "g3", "content": "done"}]}

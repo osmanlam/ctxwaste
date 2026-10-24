@@ -1,0 +1,37 @@
+[
+ {
+  "role": "system",
+  "content": "You are a careful coding agent."
+ },
+ {
+  "role": "user",
+  "content": "List the files in /srv/data and read a.csv."
+ },
+ {
+  "role": "assistant",
+  "content": [
+   {
+    "type": "text",
+    "text": "Checking the directory."
+   },
+   {
+    "type": "tool_use",
+    "id": "g1",
+    "name": "list_files",
+    "input": {
+     "path": "/srv/data"
+    }
+   }
+  ]
+ },
+ {
+  "role": "tool",
+  "tool_call_id": "g1",
+  "content": "a.csv\nb.csv\nc.csv"
+ },
+ {
+  "role": "tool",
+  "tool_call_id": "g2",
+  "content": "id,name,score\n1,alpha,10\n2,beta,20\n3,gamma,30"
+ }
+]

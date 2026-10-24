@@ -1,0 +1,9 @@
+{"type": "user", "message": {"role": "user", "content": "hello"}}
+not json {
+42
+{"type": "summary", "summary": "session note"}
+{"role": "assistant", "content": "hi there"}
+
+{"foo": "bar"}
+{"type": "user", "message": {"role": "user", "content": [{"type": "tool_result", "content": "ok"}]}}
+{"type": "assistant", "message": {"role": "assistant", "content"
